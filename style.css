@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. VARIABLES & CORE RESETS
+   ========================================================================== */
 :root {
     --bg-main: #f8fafc;
     --bg-header: #0f172a; /* Sophisticated deep dark tone */
@@ -51,7 +54,9 @@ body {
 .line-v2 { top: 0; right: 20%; width: 1px; height: 100%; transform: rotate(-8deg); }
 .line-h1 { top: 40%; left: 0; width: 100%; height: 1px; transform: rotate(-2deg); }
 
-/* Sticky Dark Nav Header Styling */
+/* ==========================================================================
+   2. STICKY HEADER NAVIGATION
+   ========================================================================== */
 nav.dark-header {
     position: sticky;
     top: 0;
@@ -92,7 +97,9 @@ nav.dark-header .nav-links a:hover {
     color: #ffffff;
 }
 
-/* Base Main Layout Alignment Wrapper */
+/* ==========================================================================
+   3. HERO SECTION (DESKTOP DEFAULT)
+   ========================================================================== */
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -100,7 +107,6 @@ nav.dark-header .nav-links a:hover {
     width: 100%;
 }
 
-/* Hero Section Structured Box Layout */
 .hero-section {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -144,7 +150,6 @@ h1 {
     margin-bottom: 2rem;
 }
 
-/* Alignment Row for Status Tag and Inline Quote */
 .status-quote-row {
     display: flex;
     align-items: center;
@@ -188,7 +193,6 @@ h1 {
     white-space: nowrap;
 }
 
-/* Micro-Interactions Buttons */
 .hero-ctas {
     display: flex;
     gap: 1rem;
@@ -228,7 +232,6 @@ h1 {
     background: rgba(30, 75, 110, 0.05);
 }
 
-/* Horizontal Metrics Summary Module Layout */
 .stats-bar {
     display: flex;
     align-items: center;
@@ -257,12 +260,15 @@ h1 {
     user-select: none;
 }
 
-/* Blueprint Floating Frame System for Image */
+/* ==========================================================================
+   4. HERO PROFILE IMAGE SYSTEM
+   ========================================================================== */
 .hero-image-container {
     position: relative;
     width: 380px;
+    max-width: 100%; /* Keeps container safely scaled on smaller grids */
     height: 420px;
-    justify-self: end;
+    justify-self: end; /* Aligned right on desktop views */
 }
 
 .image-wrapper {
@@ -300,7 +306,9 @@ h1 {
     border-width: 0 1.5px 1.5px 0;
 }
 
-/* Clear Structural Grouping for Layout Containers */
+/* ==========================================================================
+   5. MAIN PANELS AND SECTIONS
+   ========================================================================== */
 .content-layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -318,7 +326,6 @@ h1 {
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015);
 }
 
-/* Crisp Section Segment Badge Labels */
 .section-badge-header {
     position: absolute;
     top: -12px;
@@ -342,7 +349,6 @@ h1 {
     color: var(--text-primary);
 }
 
-/* Internal Content Block Typography */
 .about-p {
     font-size: 1rem;
     color: var(--text-secondary);
@@ -366,7 +372,6 @@ h1 {
     color: var(--text-secondary);
 }
 
-/* Timeline Layout Component */
 .experience-card {
     border-left: 2px solid var(--navy-blue);
     padding-left: 1.5rem;
@@ -404,7 +409,6 @@ h1 {
     left: 0;
 }
 
-/* Project Stack Elements */
 .project-stack {
     display: flex;
     flex-direction: column;
@@ -446,12 +450,10 @@ h1 {
     border: 1px solid var(--border-soft);
 }
 
-/* Education Presentation Structure */
 .education-card h5 { font-size: 1.1rem; font-weight: 600; }
 .education-card class { color: var(--text-secondary); margin: 0.25rem 0; }
 .timeline-span { font-size: 0.85rem; color: var(--navy-blue); font-weight: 600; display: block; margin-top: 0.5rem; }
 
-/* Grid Modules for Custom Lists */
 .certs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -481,7 +483,6 @@ h1 {
     transition: all 0.2s ease-in-out;
 }
 
-/* Formless Contact Framework Links */
 .contact-footer {
     background: var(--bg-main);
     padding: 1.25rem;
@@ -502,11 +503,11 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* ========================================== */
-/* REWORKED RESPONSIVE BREAKPOINTS            */
-/* ========================================== */
+/* ==========================================================================
+   6. POWERFUL ADAPTIVE BREAKPOINTS (MOBILE FIX)
+   ========================================================================== */
 
-/* Tablets & Small Desktops (MD Breakpoint) */
+/* Tablets & Small Laptops (MD Breakpoint) */
 @media (max-width: 1024px) {
     nav.dark-header { 
         padding: 1.2rem 2rem; 
@@ -537,9 +538,11 @@ h1 {
         margin-right: auto;
     }
 
+    /* CRITICAL FIX: Center profile picture on smaller viewports and order it cleanly */
     .hero-image-container { 
         justify-self: center; 
-        order: -1; /* Puts image above text on smaller responsive layouts */
+        margin: 0 auto;
+        order: -1; 
     }
 
     .status-quote-row { 
@@ -563,7 +566,7 @@ h1 {
     }
 }
 
-/* Micro-adjustment for card layouts */
+/* Layout Padding Scaling for Small Display Configurations */
 @media (max-width: 768px) {
     .card-header {
         flex-direction: column;
@@ -603,7 +606,7 @@ h1 {
     }
     
     .divider-line {
-        display: none; /* Safely removes line component to give quote text breathing room */
+        display: none; /* Frees horizontal line weight space */
     }
     
     .hero-ctas {
@@ -641,7 +644,9 @@ h1 {
     }
 }
 
-/* JavaScript Scroll Reveal Animation Styles */
+/* ==========================================================================
+   7. SCROLL INTERACTION & TYPING EMULATOR DECORATIONS
+   ========================================================================== */
 .section-hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -653,7 +658,6 @@ h1 {
     transform: translateY(0);
 }
 
-/* Typing Cursor Simulation Styling */
 .typing-target::after {
     content: '|';
     animation: blink 0.8s infinite;
