@@ -26,6 +26,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
 }
 
 /* Abstract Subtle Linear Background Network Elements */
@@ -96,6 +97,7 @@ nav.dark-header .nav-links a:hover {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 2rem 5rem 2rem;
+    width: 100%;
 }
 
 /* Hero Section Structured Box Layout */
@@ -149,6 +151,7 @@ h1 {
     gap: 1.2rem;
     margin-bottom: 2.5rem;
     max-width: 650px;
+    width: 100%;
 }
 
 .status-badge {
@@ -190,6 +193,7 @@ h1 {
     display: flex;
     gap: 1rem;
     margin-bottom: 3.5rem;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -234,6 +238,7 @@ h1 {
     padding: 0.8rem 1.2rem;
     width: fit-content;
     border: 1px solid rgba(30, 75, 110, 0.15);
+    flex-wrap: wrap;
 }
 
 .stat-node {
@@ -372,11 +377,12 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1rem;
+    gap: 1rem;
 }
 
 .position-title { font-size: 1.1rem; font-weight: 700; }
 .organization { color: var(--navy-blue); font-weight: 500; font-size: 0.9rem; }
-.date-badge { font-size: 0.8rem; background: var(--bg-main); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--text-muted); border: 1px solid var(--border-soft); }
+.date-badge { font-size: 0.8rem; background: var(--bg-main); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--text-muted); border: 1px solid var(--border-soft); white-space: nowrap; }
 
 .bullet-points {
     list-style: none;
@@ -421,7 +427,7 @@ h1 {
     box-shadow: 0 6px 16px rgba(30, 75, 110, 0.04);
 }
 
-.mini-project-card h5 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center; }
+.mini-project-card h5 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
 .mini-project-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 1rem; }
 
 .proj-pill-row {
@@ -486,3 +492,176 @@ h1 {
 .contact-sub { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
 
 .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--navy-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+/* ========================================== */
+/* REWORKED RESPONSIVE BREAKPOINTS            */
+/* ========================================== */
+
+/* Tablets & Small Desktops (MD Breakpoint) */
+@media (max-width: 1024px) {
+    nav.dark-header { 
+        padding: 1.2rem 2rem; 
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    nav.dark-header .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 1.5rem 4rem 1.5rem;
+    }
+
+    .hero-section { 
+        grid-template-columns: 1fr; 
+        gap: 3.5rem; 
+        text-align: center; 
+        padding: 3rem 0;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image-container { 
+        justify-self: center; 
+        order: -1; /* Puts image above text on smaller responsive layouts */
+    }
+
+    .status-quote-row { 
+        justify-content: center; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-ctas { 
+        justify-content: center; 
+    }
+
+    .stats-bar { 
+        margin: 0 auto; 
+        justify-content: center;
+    }
+
+    .content-layout { 
+        grid-template-columns: 1fr; 
+        gap: 1rem; 
+    }
+}
+
+/* Micro-adjustment for card layouts */
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+    
+    .mini-project-card h5 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
+
+/* Small Smart Phones (SM Breakpoint) */
+@media (max-width: 640px) {
+    h1 { 
+        font-size: 2.6rem; 
+    }
+    
+    .hero-subtitle { 
+        font-size: 1.35rem; 
+    }
+    
+    .certs-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .status-quote-row { 
+        flex-direction: column; 
+        gap: 0.6rem; 
+    }
+    
+    .quote-text {
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .divider-line {
+        display: none; /* Safely removes line component to give quote text breathing room */
+    }
+    
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .btn {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .stats-bar {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.6rem;
+    }
+    
+    .stat-node-divider {
+        display: none;
+    }
+
+    .hero-image-container {
+        width: 280px;
+        height: 310px;
+    }
+    
+    .layout-section {
+        padding: 2.5rem 1.25rem 1.5rem 1.25rem;
+    }
+}
+
+/* JavaScript Scroll Reveal Animation Styles */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typing Cursor Simulation Styling */
+.typing-target::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+    color: var(--navy-blue);
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
