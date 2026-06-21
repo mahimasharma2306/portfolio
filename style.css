@@ -426,6 +426,7 @@ h1 {
 
 .proj-pill-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
@@ -485,52 +486,3 @@ h1 {
 .contact-sub { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
 
 .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--navy-blue);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-/* Adaptive Breakpoints for Smaller Displays */
-@media (max-width: 1024px) {
-    nav.dark-header { padding: 1.2rem 2rem; }
-    .hero-section { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-    .hero-image-container { justify-self: center; width: 320px; height: 360px; }
-    .status-quote-row { justify-content: center; width: 100%; }
-    .hero-ctas { justify-content: center; }
-    .stats-bar { margin: 0 auto; }
-    .content-layout { grid-template-columns: 1fr; gap: 0; }
-}
-
-@media (max-width: 640px) {
-    .certs-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 2.8rem; }
-    .status-quote-row { flex-direction: column; gap: 0.5rem; }
-}
-/* JavaScript Scroll Reveal Animation Styles */
-.section-hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.section-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Typing Cursor Simulation Styling */
-.typing-target::after {
-    content: '|';
-    animation: blink 0.8s infinite;
-    color: var(--navy-blue);
-    margin-left: 2px;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
