@@ -265,9 +265,9 @@ h1 {
    ========================================================================== */
 .hero-image-container {
     position: relative;
-    width: 480px;
+    width: 380px;
     max-width: 100%; /* Keeps container safely scaled on smaller grids */
-    height: 550px;
+    height: 500px;
     justify-self: end; /* Aligned right on desktop views */
 }
 
